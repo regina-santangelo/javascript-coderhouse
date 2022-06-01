@@ -63,8 +63,10 @@ console.log(productos.length)
 //APLICANDO DOM
 
 let titulo = document.getElementById('tituloProducto');
-titulo.innerText = prompt("Introducí un nuevo nombre para el título");
-console.log(titulo.innerText);
+if(titulo){
+    titulo.innerText = prompt("Introducí un nuevo nombre para el título");
+    console.log(titulo.innerText); 
+}
 
 let productoDom = {
     id: 1,
@@ -73,17 +75,17 @@ let productoDom = {
     precio1: 500
 };
 
-let plantilla = `ID:${productoDom.id} \nProducto ${productoDom.nombre} \nAroma:${productoDom.aroma} \nPrecio:${productoDom.precio1}`;
+// let plantilla = `ID:${productoDom.id} \nProducto ${productoDom.nombre} \nAroma:${productoDom.aroma} \nPrecio:${productoDom.precio1}`;
 
-let nuevaCard = document.createElement('div');
-nuevaCard.innerHTML = `<h2>Soy una card creada desde DOM</h2>
-<h4>${productoDom.nombre}</h4>
-<p>Aroma:${productoDom.aroma}</p>
-<img src="./galeria/belleza.png">
-<p>${productoDom.precio1}</p>`
+// let nuevaCard = document.createElement('div');
+// nuevaCard.innerHTML = `<h2>Soy una card creada desde DOM</h2>
+// <h4>${productoDom.nombre}</h4>
+// <p>Aroma:${productoDom.aroma}</p>
+// <img src="./galeria/belleza.png">
+// <p>${productoDom.precio1}</p>`
 
-document.body.prepend(nuevaCard)
-nuevaCard.className = "card"
+// document.body.prepend(nuevaCard)
+// nuevaCard.className = "card"
 
 //Aplicando Eventos (en formulario de contacto)
 
@@ -93,9 +95,13 @@ formulario.addEventListener('submit', function(e){
     e.preventDefault();
     let inputUno = document.getElementById('input1').value;
     console.log(inputUno);
+    let inputDos = document.getElementById('input2').value;
+    console.log(inputDos)
+    let inputTres = document.getElementById('input3').value;
+    console.log(inputTres)
 })
 
-
-
-
-
+let enviar = document.getElementById('enviar');
+enviar.onclick = () =>{
+    alert("Gracias por tu mensaje ,en breve te estaremos contactando.");
+} 
