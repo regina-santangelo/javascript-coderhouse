@@ -1,4 +1,4 @@
-let carts = document.querySelectorAll('.cart');
+let carts = document.querySelectorAll('.boton');
 
 let products = [
     {
@@ -24,25 +24,43 @@ let products = [
 ]
 
 for(let i=0; i < carts.length; i++){
-    carts[i].addEventListener ('click', () => {
-        cartNumbers();
+    carts[i].addEventListener ('click', (e) => {
+        e.preventDefault();
+        cartNumbers(products[i]);
     })
 }
 
-function cartNumbers(){
-    let productNumbers = localStorage.getItem('cartNumbers');
-    productNumbers = parseInt(productNumbers);
+function cartNumbers(product){
+    let productNumbers = parseInt(localStorage.getItem('cartNumbers'));
+    let numeroCarrito = document.querySelector('.numCarrito');
     
     if(productNumbers){
-        localStorage.setItem('cartNumbers', productNumbers, +1);
+        localStorage.setItem('cartNumbers', productNumbers + 1);
+        numeroCarrito.innerHTML = productNumbers + 1;
 
     }else{
         localStorage.setItem('cartNumbers', 1);
-        document.querySelector('.card span').textContent = 1;
+        document.querySelector('.cart').textContent = 1;
+        numeroCarrito.innerHTML = 1;
     }
+
+    setItem(product);
 }
 
-console.log(carts.length);
+function setItem(product) {
+    let carritoProducts = localStorage.getItem('Productos');
+
+    if(carritoProducts != null){
+        carritoProducts[product.name].inCart += 1;
+    }else{
+        product.inCart = 1;
+        carritoProducts = {
+            [product.name]: product
+        }
+    }
+
+    localStorage.setItem("Productos", JSON.stringify(carritoProducts));
+}
 
 //APLICANDO DOM
 
