@@ -16,13 +16,12 @@ body{
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     font-family: 'Cormorant Garamond', serif;
-    background-color: rgb(245, 209, 229);
 }
 
 .container{
     display: flex;
     justify-content: center;
-    background-color:rgba(160, 105, 131, 0.849);
+    background-color:rgba(143, 105, 160, 0.849);
     height: 80px;
     padding: 30px;
 }
@@ -39,7 +38,7 @@ body{
     justify-content: space-around;
     height: 60px;
     width: 100%;
-    background-color: rgba(160, 105, 131, 0.849);
+    background-color: rgba(143, 105, 160, 0.849);
 }
 
 .section{
@@ -51,83 +50,125 @@ body{
 }
 
 .section:hover{
-    background-color: rgba(207, 158, 181, 0.849);
+    background-color: rgba(198, 158, 207, 0.849);
 }
 
 .logo{
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
     justify-content: center;
-    background-color: rgba(160, 105, 131, 0.849);
+    background-color: rgba(143, 105, 160, 0.849);
 }
 
-.logo img{
+.fotoLogo{
+    grid-column-start:1;
+    grid-row-start: 1;
     height: 180px;
     width: 180px;
     border-radius: 80px;
     margin: 10px;
 }
 
+.cart{
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.cart img{
+    height: 50px;
+    width: 50px
+}
+
 h3{
     display: flex;
     justify-content: center;
     margin-top: 100px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     padding-top: 28px;
-    font-size: 27px;
-    color: rgba(44, 22, 32, 0.685);
-    background-color: rgba(160, 105, 131, 0.685);
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.685);
+    background-color: rgba(143, 105, 160, 0.849);
+}
+
+.precio{
+    margin: 10px;
+    font-size: 23px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .productos{
    display: grid;
-   grid-template-columns: auto auto auto;
-   grid-template-rows: auto 200px;
+   grid-template-columns: auto auto;
+   grid-template-rows: auto auto;
    justify-content: center;
-   height: 550px;
+   height: 85%;
    width: 100%;
-   background-color: rgba(160, 105, 131, 0.685);
+   background-color: rgba(143, 105, 160, 0.849);
    padding-bottom: 20px;
    margin-bottom: 100px;
 }
 
-.prod-1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 470px;
-    width: 400px;
-    margin-right: 20px;
-    background-color: rgba(240, 248, 255, 0.774);
-    border-radius: 10px;
-    padding-bottom: 15px;
+.card-1{
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    grid-column-start: 1;
+    width: 700px !important;
+    font-size: 20px;
+    background-color: rgba(240, 248, 255, 0.373);
+    padding: 20px;
+    margin: 25px;
+}
+.card-2{
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    grid-column-start: 2;
+    width: 700px !important;
+    font-size: 20px;
+    background-color: rgba(240, 248, 255, 0.373);
+    padding: 20px;
+    margin: 25px;
+}
+.card-3{
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    width: 700px !important;
+    font-size: 20px;
+    background-color: rgba(240, 248, 255, 0.373);
+    padding: 20px;
+    margin: 25px;
+}
+.card-4{
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    width: 700px !important;
+    font-size: 20px;
+    background-color: rgba(240, 248, 255, 0.373);
+    padding: 20px;
+    margin: 25px;
 }
 
-.prod-2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 470px;
-    width: 400px;
-    margin-right: 20px;
-    background-color: rgba(240, 248, 255, 0.774);
-    border-radius: 10px;
-    padding-bottom: 15px;
+.card-title-1{
+    font-size: 25px;
 }
 
-.prod-3{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 470px;
-    width: 400px;
-    background-color: rgba(240, 248, 255, 0.774);
-    border-radius: 10px;
-    padding-bottom: 15px;
+.boton{
+    width: 100%;
+    color: blue;
 }
 
 img{
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 580px;
 }
 
 .productos .precio{
@@ -135,15 +176,6 @@ img{
     grid-column-start: 1;
     grid-column-end: 4;
     justify-content: space-around;
-}
-
-.precio{
-    height: 30px;
-}
-
-.precio p{
-    font-size: 20px;
-    margin-top: 10px;
 }
 
 .card{
