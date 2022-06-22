@@ -37,7 +37,7 @@ function guardadoEnCarrito (){
 }
 
 function cartNumbers (producto) {
-    console.log('el producto es', producto);
+    // console.log('el producto es', producto);
     let productNumbers = localStorage.getItem('cantidad');
     productNumbers = parseInt(productNumbers);
 
@@ -48,21 +48,25 @@ function cartNumbers (producto) {
         localStorage.setItem('cantidad', 1);
         document.querySelector('.numCarrito').textContent =  1;
     }
+
+    items(producto);
+}
+
+function items(producto) {
+    let itemsCarrito = localStorage.getItem('Productos en carrito');
+    itemsCarrito = JSON.parse(itemsCarrito);
+    console.log('Los items en el carrito son', itemsCarrito);
+
+    producto.inCart = 1;
+
+    itemsCarrito = {
+        [producto.id]:producto
+    }
+
+    localStorage.setItem('Productos en carrito', JSON.stringify(itemsCarrito));
 }
 
 guardadoEnCarrito();
-
-// let plantilla = `ID:${productoDom.id} \nProducto ${productoDom.nombre} \nAroma:${productoDom.aroma} \nPrecio:${productoDom.precio1}`;
-
-// let nuevaCard = document.createElement('div');
-// nuevaCard.innerHTML = `<h2>Soy una card creada desde DOM</h2>
-// <h4>${productoDom.nombre}</h4>
-// <p>Aroma:${productoDom.aroma}</p>
-// <img src="./galeria/belleza.png">
-// <p>${productoDom.precio1}</p>`
-
-// document.body.prepend(nuevaCard)
-// nuevaCard.className = "card"
 
 //Aplicando Eventos (en formulario de contacto)
 //----------------------------------------------------
@@ -72,13 +76,23 @@ const formulario = document.getElementById('form');
 if(formulario){
     formulario.addEventListener('submit', function(e){
     e.preventDefault();
-    let inputUno = document.getElementById('input1').value= this.ariaPlaceholder;
+    let inputUno = document.getElementById('input1').value;
     console.log(inputUno);
-    let inputDos = document.getElementById('input2').value=this.ariaPlaceholder;
+    let inputDos = document.getElementById('input2').value;
     console.log(inputDos);
-    let inputTres = document.getElementById('input3').value=this.ariaPlaceholder;
+    let inputTres = document.getElementById('input3').value;
     console.log(inputTres);
     
+    const serviceID = 'default_service';
+    const templateID = 'template_pc7ti8i';
+
+    emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'ENVIAR';
+    }, (err) => {
+      btn.value = 'ENVIAR';
+      alert(JSON.stringify(err));
+    });
 })
 
 let enviar = document.getElementById('enviar');
@@ -92,8 +106,11 @@ enviar.addEventListener('click', ()=>{
         timer: 2500
       })
 })
+}
 reset(inputUno.value);
 reset(inputTres.value);
-}
+
+
+
 
 
