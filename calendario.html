@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva tu turno!</title>
+    <link rel="stylesheet" href="./node_modules/fullcalendar/main.css">
+    <link rel="stylesheet" href="calendario.css">
+</head>
+
+<body>
+    <!-- contenedor para renderizar el calendario: -->
+    <div id="calendar" class="calendario">
+        
+    </div>
+
+    <div id="modal">
+        <div class="containerModal column">
+            <h2>Seleccioná la fecha, hora y servicio a reservar.</h2>
+            <hr>
+            <input type="text" id="titulo" placeholder="Elegí el servicio que vos quieras">
+            <div class="row">
+                <input type="text" id="fechaInicio">
+                <input type="text" id="horaInicio" placeholder="Hora de inicio (00:00:00)">
+            </div>
+            <textarea id="descripcion" placeholder="Descripción del evento"></textarea>
+            <div class="row">
+                <label for="color">Color de la tarjeta:</label>
+                <input type="color" id="color" name="color" value="#00C217">
+                <label for="textColor">Color del texto:</label>
+                <input type="color" id="textColor" name="textColor" value="#0018CC">
+            </div>
+            <div class="row">
+                <button id="crear">Guardar</button>
+                <button id="cancelar">Cancelar</button>
+            </div>
+        </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./node_modules/fullcalendar/main.js"></script>
+    <script src="./node_modules/fullcalendar/locales/es.js"></script>
+    <!-- Script para trabajar nuestro calendario -->
+    <script src="./js/calendar.js"></script>
+</body>
+</html>

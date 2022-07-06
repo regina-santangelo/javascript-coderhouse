@@ -1,0 +1,93 @@
+/*---Personalizando el calendario de FullCalendar---*/
+.calendario{
+    height: 900px;
+    width: 1200px;
+    margin-top: 30px;
+    text-align: center;
+    background-color: rgba(85, 49, 49, 0.747);
+    margin-left: 20%;
+    color: #ffffff;
+    border-radius: 60px;
+}
+
+body{
+    margin: 0 auto;
+    background-image: url(./galeria/fondo-minimalista.png);
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+#modal {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: RGBA(0,0,0,0.5);
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    display: none;
+}
+
+.containerModal {
+    width: 520px;
+    min-height: 300px;
+    background-color: rgba(128, 96, 96, 0.747);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px;
+    transition: 0.5s;
+}
+
+h2{
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+hr {
+    width: 90%;
+}
+
+input{
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 8px;
+}
+
+textarea#descripcion {
+    width: 90%;
+    height: 150px;
+    margin: 8px;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+#color, #textColor{
+    width: 50px;
+}
+
+button {
+    margin: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 130px;
+    background-color: rgb(168, 165, 165);
+}
+
+#email{
+    width: 460px;
+}
